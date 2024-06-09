@@ -1,0 +1,2872 @@
+:root 
+{
+    /* Colors */
+    --primary-color: #4E3629;
+    --secondary-color: #F7D6CF;
+    --base-color: #fff;
+    --background-color: #f8f9fa;
+    --text-color-light: #e0e0e0;
+    --text-color-dark: #4E3629;
+    --hover-color-start: #4E3629;
+    --hover-color-end: #F7D6CF;
+    --accent-color: rgb(184, 212, 248);
+    --link-color: #4c3949;
+    --button-background: rgb(209, 229, 255);
+
+    /* Shadows and Effects */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-color-start: rgba(255, 255, 255, 0.659);
+    --gradient-color-end: blur(10px);
+
+    /* Backgrounds */
+    --sidebar-background: rgba(255, 255, 255, 0.659);
+
+    /* Shadows */
+    --sidebar-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+
+    /* Animation and Transition Variables */
+    --animation-duration: 0.3s;
+    --animation-easing: ease-in-out;
+    --transition-duration: 0.2s;
+}
+
+h2
+{
+    text-align: center;
+
+}
+p
+{
+    color: var(--text-color-dark);
+    margin-bottom: 20px;
+}
+
+/* this is the end for the faq part */
+#scrollToTopBtn 
+{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color var(--animation-duration);
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--primary-color);
+}
+/* Reset default margin to 0 for all elements */
+html 
+{
+    scroll-behavior: smooth;
+}
+
+/* Body styling */
+body
+{
+    font-family: 'Almarai', sans-serif;
+    font-size: clamp(15px, 4vw, 18px);
+    background-color:  var(--background-color);
+    color: var(--text-color-dark);
+    align-items: center;
+}
+h1
+{
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--text-color-dark);
+    padding: 30px;
+}
+h3
+{
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+    padding: 10px;
+}
+
+/* this is my attempt to make responsive */
+@media screen and (min-width:1000px) 
+{
+    * 
+    {   
+    margin: 8px;
+   
+    }
+    /* this is for nav */
+    /* header */
+    .header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--base-color);
+        color: var(--base-color);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    /* ##header */
+
+    /* logo */
+    .logo 
+    {
+        width: 300px;
+        height: 150px;
+    }
+    /* ##logo */
+
+    /* Navbar */
+    .navbar 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    /*  nav-list */
+    .nav-list 
+    {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* nav-item */
+    .nav-item 
+    {
+        margin: 10px;
+    }
+
+    .nav ul
+    {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Navigation links styling */
+    .nav-item a
+    {
+        color: var(--text-color-dark);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.9rem;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+        position: relative;
+        letter-spacing: 2px;
+    }
+
+    /* Navigation link hover effect */
+    .nav-item a::before
+    {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-image: linear-gradient(to right, var(--hover-color-start) , var(--hover-color-end));
+        transition: width 0.25s ease-out;
+    }
+
+    .nav-item a:hover::before
+    {
+        width: 100%;
+        left: 0;
+        right: auto;
+        transition: 0.5s;
+        text-decoration: 1px underline #754b61;
+    }
+
+    /* nav-link */
+    .nav-link 
+    {
+        display: block;
+        color: var(--base-color);
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    /* ##Navbar */
+
+    /* Search-bar */
+    .search-bar 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .bi 
+    {
+        height: 300px;
+        width: 300px;
+    }
+
+    .search
+    {
+        display: inline-block;
+        position: relative;
+    }
+
+    .search input
+    {
+        height: 40px;
+        padding: 0 40px 0 0px;
+        border-radius: 20px;
+        border: 0;
+        width: 0;
+        transition: 500ms;
+    }
+    .search button
+    {
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .search:hover>input, input:focus
+    {
+        width: 150px;
+        padding-left: 20px;
+        outline: burlywood;
+    }
+    /* ##Searchbar */
+    /* Sidebar */
+    .sidebar
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.659);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .sidebar li
+    {
+        width: 100%;
+    }
+
+    .sidebar a
+    {
+        width: 100%;
+    }
+
+    .menu-button
+    {
+        display: none;
+    }
+    /* ##Sidebar */
+
+    /* this is end of nav */
+    /* this is the start of pop up ads styling  */
+    #popup 
+    {
+    position: absolute;
+    display: block;
+    padding: 3rem;
+    background-color: var(--base-color);
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    }
+    .popup.show 
+    {
+        display: block;
+    }
+    .popup .close 
+    {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+    /* this is the end of pop up ads styling  */
+
+    /* Flexbox layout for positioning */
+    .flex-container 
+    {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+  
+    /* Container for the responsive video */
+    .multimedia-container 
+    {
+        flex: 1;
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+    }
+    /* this is the end of the header */
+    
+    /* this is for the slideshow of the index page */
+    #wp
+    {
+        width: 100%;
+    }
+    .slide_container
+    {
+        max-width: 800px;
+        position: relative;
+        margin: auto;
+    }
+    /* this is for the special offer text */
+    
+    .specialOfferText
+    {
+        color: var(--text-color-dark);
+        text-align: center;
+
+    }
+    .textSpecialOfferDiv
+    {
+        display: flex;
+        justify-content: center;
+    }
+    /* This will be the start for card styling */
+    .cardDiv1
+    {
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    .cardDiv2
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Styling for individual cards */
+    .card1, .card2, .card3 
+    {
+        width: calc(33.33% - 60px);
+        margin: 30px;
+        box-shadow: 0 2px 8px 0 #F7D6CF ;
+        transition: var(--animation-duration);
+        display: flex;
+        flex-direction: column;
+    }
+    .cardDiv1 .box1:hover , .cardDiv2 .box1:hover
+    {
+        box-shadow: 0 3px 8px 0 rgb(0, 38, 87);
+        transform: scale(1.05);
+    }
+
+    /* Styling for the video and card section */
+    .cardDiv1 
+    {
+        display: flex;
+        width: 100%;
+    }
+    /* Hover effect for cards */
+    .cardDiv1 .card1:hover,
+    .cardDiv1 .card2:hover,
+    .cardDiv1 .card3:hover 
+    {
+        box-shadow: 0 3px 8px 0 var(--primary-color);
+        transform: scale(1.05);
+    }
+
+    /* Hover effect for card images */
+    .cardDiv1 .card1:hover .image img,
+    .cardDiv1 .card2:hover .image img,
+    .cardDiv1 .card3:hover .image img 
+    {
+        transform: scale(1.05);
+    }
+    /* Styling for card text container */
+    .text1 
+    {
+        width: 100%;
+    }
+
+    /* Styling for card content */
+    .content 
+    {
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Styling for the code paragraph */
+    .code 
+    {
+        width: 100%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    /* Styling for the image container */
+    .image 
+    {
+        width: 250px;
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    /* Styling for card images */
+    .image img 
+    {
+        max-width: 100%;
+        max-height: 100%;
+        transition: transform 0.3s;
+    }
+
+    /* Styling for buttons */
+    .btn 
+    {
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        color: var(--text-color-light);
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Styling for button container */
+    .buttonCotainer 
+    {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* This box is from health benifit subpage for each card */
+    .box1
+    { 
+        width: calc(33.33% - 60px);
+        margin: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Styling for ads */
+    .forAds,
+    .forAdsNo2 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px;
+    }
+
+    /* Styling for the ads container */
+    .ads 
+    {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    /* Styling for the ads image */
+    #imgForAds1,#imgForAds2 
+    {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Styling for the ads text container */
+    .textAds 
+    {
+        flex: 2;
+    }
+
+    /* Styling for the ads text paragraphs */
+    .textAds p 
+    {
+        font-size: 20px;
+        line-height: 1.5;
+        color: var(--text-color-dark);
+    }
+     /* Styling for ads images inside cards */
+    .ads img 
+    {
+        width: 50%;
+    }
+
+    /* Styling for the second set of ads */
+    .forAdsNo2 .ads 
+    {
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    /* Styling for the video advertisement */
+    video#advertisement 
+    {
+        margin: 0;
+        width: 100%;
+        height: auto;   
+        max-width: 100%;
+        display: block;
+    }
+    /* this is start of the styling for the index box in the home page */
+    .indexBox
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        border: 2px solid var(--primary-color);
+    }
+    .indexInner1 , .indexInner2 , .indexInner3 , .indexInner4 , .indexInner5
+    {
+        flex: 1;
+        max-width: 250px;
+        text-align: center;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .indexInner1 i, .indexInner2 i, .indexInner3 i, .indexInner4 i, .indexInner5 i
+    {
+        text-align: center;
+        justify-content: center;
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    
+    .indexInner1 h5,.indexInner2 h5,.indexInner3 h5,.indexInner4 h5,.indexInner5 h5
+    {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .indexInner1 p, .indexInner2 p, .indexInner3 p, .indexInner4 p, .indexInner5 p 
+    {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    /* this is end of the styling for the index box in the home page */
+    
+    /* this is the start of the Rising desk page */
+
+    /* this is the start of the deck of the rising hover boxes */
+
+    .deck-container 
+    {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+    .deck 
+    {
+    position: relative;
+    width: 350px;
+    height: auto;
+    margin: 10px;
+    transition: opacity 0.3s ease;
+    }
+
+    .deck img 
+    {
+    width: 100%;
+    height: auto; 
+    }
+
+    .deck:hover
+    {
+    opacity: 0.7;
+    }
+
+  .deck:hover .text-overlay
+    {
+    opacity: 1;
+    }
+
+  .text-overlay 
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+  /* Additional styling for the text overlay */
+  .text-overlay h2 
+  {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--base-color);
+  }
+
+/* this is the end of the deck of the rising hover boxes */
+
+
+    /* Styling for individual desks of rising desk page*/
+    .deskDiv1,
+    .deskDiv2,
+    .deskDiv3
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .desk1,
+    .desk2,
+    .desk3,
+    .desk4
+    {
+        width: 22%;
+        margin: 10px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .deskDiv1 .desk1:hover,
+    .deskDiv1 .desk2:hover,
+    .deskDiv1 .desk3:hover,
+    .deskDiv1 .desk4:hover,
+    .deskDiv2 .desk1:hover,
+    .deskDiv2 .desk2:hover,
+    .deskDiv2 .desk3:hover,
+    .deskDiv2 .desk4:hover,
+    .deskDiv3 .desk1:hover,
+    .deskDiv3 .desk2:hover,
+    .deskDiv3 .desk3:hover,
+    .deskDiv3 .desk4:hover 
+    {
+        box-shadow: 0 4px 8px 0 var(--primary-color);
+        transform: scale(1.05);
+        border-radius: 30px;
+    }
+    .deskImage
+    {
+        width: auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .deskImage img 
+    {
+        max-width: 100%;
+        max-height: 100%;
+        transition: transform 0.3s;
+        border-radius: 10px;
+    }
+    
+    .deskDiv1 .desk1:hover .deskImage img,
+    .deskDiv1 .desk2:hover .deskImage img,
+    .deskDiv1 .desk3:hover .deskImage img,
+    .deskDiv1 .desk4:hover .deskImage img
+    {
+        transform: scale(1.02);
+    }
+    .buttonCotainerRising
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnRising
+    {
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        color: var(--text-color-light);
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* this is the start for the faq part */
+    .faqDiv 
+    {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    }
+    .faqbutton 
+    {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--animation-duration);
+    }
+    .faqbutton:hover 
+    {
+    background-color: var(--hover-color-end);
+    color: var(--text-color-dark);
+    transition: 0.5s var(--animation-easing);
+    }
+    /* this is the end  of the Rising desk page */
+
+    
+    /* this is the start of the contact us page */
+    
+    /* this will be for form styling */
+    .input-text
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .input-email
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;  
+        width: 100%;        
+        border-radius: 5px;
+    }
+
+    .head
+    {
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    /* Form Styles */
+    form 
+    {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact 
+    {
+        margin-bottom: 15px;
+    }
+
+    label 
+    {
+        margin-bottom: 5px;
+    }
+
+    input 
+    {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .contact input:focus 
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .btnline 
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btnCU
+    {
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .btnsubmit 
+    {
+        background-color: var(--primary-color);
+        color: #EAE0Df;
+        border: none;
+    }
+
+    .btnclear 
+    {
+        background-color: #c8a19c;
+        color: #333;
+        border: none;
+    }
+    /* end of contact us page */
+
+    /* this is for the page of health beniefit */
+
+    .healthHeader 
+    {
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        color: var(--text-color-dark); 
+        position: relative;
+        transition: color 0.5s ease-in; 
+    }
+    
+    .healthHeader::before 
+    {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, var(--hover-color-start) , var(--hover-color-end));
+        transition: width 0.4s ease-out; 
+    }
+    
+    .healthHeader:hover::before 
+    {
+        width: 100%;
+        transition: width 0.3s ease-out; 
+    }
+    
+    .headHealthBenefit 
+    {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .headHealthBenefit img 
+    {
+        max-width: 100%;
+        display: block;
+        border-radius: 8px;
+        filter: blur(2px);
+        z-index: 1; 
+    }
+
+    .headHealthBenefit::before 
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9; 
+        z-index: 1; 
+    }
+    
+    .headHealthBenefit p
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--text-color-dark);
+        text-align: center;
+        font-size: 2rem; 
+        font-weight: bold; 
+        z-index: 2; 
+        width: 100%;
+        box-sizing: border-box; 
+        background-color: rgba(255, 255, 255, 0.9); 
+        padding: 10px; 
+    }
+    
+    /* This is for the conten 1 */
+
+    .content1 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+    
+    .content1 p 
+    {
+        max-width: 700px; 
+        margin: 10px; 
+        font-size: 18px;
+        line-height: 2;
+    }
+    
+    .content1 img 
+    {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    /* this is content 2 */
+    .content2
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+    
+    .content2 p 
+    {
+        max-width: 700px; 
+        margin: 10px; 
+        font-size: 18px;
+        line-height: 2;
+    }
+    
+    .content2 img 
+    {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    /* end of content 2 */
+
+    /* this is the animated effect for the each part of health benefit */
+
+
+    .cardDiv1 .box1 
+    .cardDiv2 .box1
+    {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cardDiv1 .box1::before,
+    .cardDiv2 .box1::before
+    {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, var(--hover-color-start) , var(--hover-color-end));
+        transition: width 0.5s ease-out;
+    }
+    
+    .cardDiv1 .box1:hover::before,
+    .cardDiv2 .box1:hover::before
+    {
+        width: 100%;
+        transition: width 0.5s;
+    }
+    
+    .cardDiv1 .box1 h3,
+    .cardDiv2 .box1 h3
+    {
+        color: var(--text-color-dark);
+        text-decoration: none;
+        padding: 0.9rem;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+    }   
+
+    /* this is start of the health related articles */
+    .healthBoxRelatedContent
+    {
+        width: 100%;
+        display: flex;
+    }
+    .hbCard
+    {
+        width: 30%;
+        margin: auto;
+        align-items: center;
+    }
+    #articleImage
+    {
+        width: auto;
+        height: 300px;
+    }
+
+
+    /* this is end of the health related articles*/
+
+
+    /* Styling for the footer */
+    footer 
+    {
+        font-weight: bold;
+        color:var(--text-color-dark);
+        padding: 20px;
+    }
+
+    .foot 
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Styling for footer paragraphs */
+    footer .foot .fLeft,
+    footer .foot .fCenter,
+    footer .foot .fRight 
+    {
+        /* text-align: center; */
+        margin: 0;
+    }
+    
+    /* Additional styling for each column */
+    footer .foot .fCenter 
+    {
+        text-align: center;
+    }
+    
+    /* Add styles for icons in the right column */
+    footer .foot .fRight i 
+    {
+        margin-left: 10px;
+        font-weight: bold;
+    } 
+
+}
+
+/* responsive navbar */
+@media screen and (max-width: 1000px) and (min-width: 799px)
+{
+    *
+    {   
+        margin: 8px;
+    }
+
+    /* this is start of nav */
+    /* header */
+    .header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--base-color);
+        color:var(--base-color);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    /* ##header */
+
+    /* logo */
+    .logo 
+    {
+        width: 300px;
+        height: 150px;
+    }
+    /* ##logo */
+
+    /* Navbar */
+    .navbar 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    /*  nav-list */
+    .nav-list 
+    {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* nav-item */
+    .nav-item 
+    {
+        margin: 8px;
+    }
+
+    nav ul
+    {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Navigation links styling */
+    .nav-item a
+    {
+        color: var(--text-color-dark);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.9rem;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+        position: relative;
+        letter-spacing: 2px;
+    }
+
+    /* Navigation link hover effect */
+    .nav-item a::before
+    {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-image: linear-gradient(to right, var(--hover-color-start) , var(--hover-color-end));
+        transition: width 0.25s ease-out;
+    }
+
+    .nav-item a:hover::before
+    {
+        width: 100%;
+        left: 0;
+        right: auto;
+        transition: 0.5s;
+        text-decoration: 1px underline var(--primary-color);
+    }
+
+    /* nav-link */
+    .nav-link 
+    {
+        display: block;
+        color: var(--base-color);
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    /* ##Navbar */
+
+    /* Search-bar */
+    .search-bar 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .bi 
+    {
+        height: 300px;
+        width: 300px;
+    }
+
+    .search
+    {
+        display: inline-block;
+        position: relative;
+    }
+
+    .search input
+    {
+        height: 40px;
+        padding: 0 40px 0 0px;
+        border-radius: 20px;
+        border: 0;
+        width: 0;
+        transition: 500ms;
+    }
+    .search button
+    {
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .search:hover>input, input:focus
+    {
+        width: 150px;
+        padding-left: 20px;
+        outline: burlywood;
+    }
+    /* ##Searchbar */
+    /* Sidebar */
+    .sidebar
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.659);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .sidebar li
+    {
+        width: 100%;
+    }
+
+    .sidebar a
+    {
+        width: 100%;
+    }
+
+    .menu-button
+    {
+        display: none;
+    }
+/* ##Sidebar */
+
+    /* this is end of nav */
+    /* this is the responsive hide on mobile version */
+    .hideOnMobile 
+    {
+        display: none;
+    }
+    .menu-button
+    {
+        display: block;
+    }
+    /* this is the responsive hide on mobile version */
+    #popup 
+    {
+    position: absolute;
+    display: block;
+    padding: 2rem;
+    background-color: var(--base-color);
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+
+    /* this is for the slideshow of the index page */
+    #wp
+    {
+        width: 100%;
+    }
+
+    .slide_container
+    {
+        max-width: 800px;
+        position: relative;
+        margin: auto;
+    }
+  /* This will be the start of ads styling */
+    .forAds,
+    .forAdsNo2 
+    {
+        align-items: center;
+        margin: 30px;
+    }
+
+    /* Styling for the ads container */
+    .ads 
+    {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    /* Styling for the ads image */
+    #imgForAds1,#imgForAds2 
+    {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Styling for the ads text container */
+    .textAds 
+    {
+        flex: 2;
+    }
+
+    /* Styling for the ads text paragraphs */
+    .textAds p 
+    {
+        font-size: 20px;
+        line-height: 1.5;
+        color: var(--text-color-light);
+    }
+     /* Styling for ads images inside cards */
+    .ads img 
+    {
+        width: 50%;
+    }
+
+    /* Styling for the second set of ads */
+    .forAdsNo2 .ads 
+    {
+        flex: 1;
+        margin-left: 20px;
+    }
+    /* this is the  end of the ads styling */
+
+    /* this is for the video of the webstie */
+    video#advertisement 
+    {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+    }
+    /* This will be the start for card styling */
+    .cardDiv1
+    {
+         display: flex;
+         flex-wrap: wrap;
+    }
+ 
+    /* Styling for individual cards */
+    .card1, .card2, .card3 
+    {
+        width: 500px;
+        margin: 30px;
+        box-shadow: 0 2px 8px 0 rebeccapurple ;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+     .cardDiv1 .box1:hover , .cardDiv2 .box1:hover
+    {
+         box-shadow: 0 3px 8px 0 rgb(0, 38, 87);
+         transform: scale(1.05);
+    }
+    /* Hover effect for cards */
+     .cardDiv1 .card1:hover,
+     .cardDiv1 .card2:hover,
+     .cardDiv1 .card3:hover 
+    {
+        box-shadow: 0 3px 8px 0 rgb(209, 229, 255);
+        transform: scale(1.05);
+    }
+ 
+    /* Hover effect for card images */
+    .cardDiv1 .card1:hover .image img,
+    .cardDiv1 .card2:hover .image img,
+    .cardDiv1 .card3:hover .image img 
+    {
+        transform: scale(1.05);
+    }
+    /* Styling for card text container */
+    .text1 
+    {
+        width: 100%;
+    }
+ 
+    /* Styling for card content */
+    .content 
+    {
+        padding: 20px;
+    }
+ 
+    /* Styling for the code paragraph */
+    .code 
+    {
+         width: 100%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+ 
+     /* Styling for card images */
+    .image img 
+    {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s;
+    }
+ 
+     /* Styling for buttons */
+     .btn 
+     {
+         background-color: var(--primary-color);
+         border-radius: 10px;
+         color: var(--text-color-light);
+         padding: 12px 16px;
+         font-size: 16px;
+         cursor: pointer;
+     }
+ 
+     /* Styling for button container */
+    .buttonCotainer 
+    {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+    /* this is the end of the card styling */
+
+    /* this is start of the styling for the index box in the home page */
+    .indexBox
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        border: 2px solid var(--primary-color);
+    }
+    .indexInner1 , .indexInner2 , .indexInner3 , .indexInner4 , .indexInner5
+    {
+        flex: 1;
+        max-width: 250px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .indexInner1 i, .indexInner2 i, .indexInner3 i, .indexInner4 i, .indexInner5 i
+    {
+        text-align: center;
+        justify-content: center;
+        font-size: 34px;
+    }
+
+    
+    .indexInner1 h5,.indexInner2 h5,.indexInner3 h5,.indexInner4 h5,.indexInner5 h5,.indexInner1 p
+    {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .indexInner1 p, .indexInner2 p, .indexInner3 p, .indexInner4 p, .indexInner5 p 
+    {
+        width: 100%;
+    }
+    /* this is end of the styling for the index box in the home page */
+
+
+   /* this is the start of the Rising desk page */
+
+    /* this is the start of the deck of the rising hover boxes */
+
+    .deck-container 
+    {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+  .deck 
+  {
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+  .deck img 
+  {
+    width: 100%;
+    height: auto; 
+  }
+
+  .deck:hover 
+  {
+    opacity: 0.7;
+  }
+
+  .deck:hover .text-overlay 
+  {
+    opacity: 1;
+  }
+
+  .text-overlay 
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+  /* Additional styling for the text overlay */
+  .text-overlay h2 
+  {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--base-color);
+  }
+
+/* this is the end of the deck of the rising hover boxes */
+
+
+
+
+    /* Styling for individual desks of rising desk page*/
+    .deskDiv1,
+    .deskDiv2,
+    .deskDiv3
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .desk1,
+    .desk2,
+    .desk3,
+    .desk4
+    {
+        width: 22%;
+        margin: 10px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .deskDiv1 .desk1:hover,
+    .deskDiv1 .desk1:hover,
+    .deskDiv1 .desk2:hover,
+    .deskDiv1 .desk3:hover,
+    .deskDiv1 .desk4:hover,
+    .deskDiv2 .desk1:hover,
+    .deskDiv2 .desk2:hover,
+    .deskDiv2 .desk3:hover,
+    .deskDiv2 .desk4:hover,
+    .deskDiv3 .desk1:hover,
+    .deskDiv3 .desk2:hover,
+    .deskDiv3 .desk3:hover,
+    .deskDiv3 .desk4:hover 
+    {
+        box-shadow: 0 4px 8px 0 var(--primary-color);
+        transform: scale(1.05);
+        border-radius: 30px;
+    }
+    .deskImage
+    {
+        width: auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .deskImage img 
+    {
+        max-width: 100%;
+        max-height: 100%;
+        transition: transform 0.3s;
+        border-radius: 10px;
+    }
+    
+    .deskDiv1 .desk1:hover .deskImage img,
+    .deskDiv1 .desk2:hover .deskImage img,
+    .deskDiv1 .desk3:hover .deskImage img,
+    .deskDiv1 .desk4:hover .deskImage img
+    {
+        transform: scale(1.02);
+    }
+    .buttonCotainerRising
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btnRising
+    {
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        color: var(--text-color-light);
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* this is the start for the faq part */
+    .faqDiv 
+    {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    }
+    .faqbutton 
+    {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--animation-duration);
+    }
+    .faqbutton:hover 
+    {
+    background-color: var(--hover-color-end);
+    color: var(--text-color-dark);
+    transition: 0.5s var(--animation-easing);
+    }
+    /* this is the end  of the Rising desk page */
+
+
+    /* this is the page of contact us */
+    .input-text
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .input-email
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;  
+        width: 100%;        
+        border-radius: 5px;
+    }
+    /* this is the start of the contact us page */
+    
+    /* this will be for form styling */
+    .input-text
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .input-email
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;  
+        width: 100%;        
+        border-radius: 5px;
+    }
+
+    .head
+    {
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    /* Form Styles */
+    form 
+    {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact 
+    {
+        margin-bottom: 15px;
+    }
+
+    label 
+    {
+        margin-bottom: 5px;
+    }
+
+    input 
+    {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .contact input:focus 
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .btnline 
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btnCU
+    {
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .btnsubmit 
+    {
+        background-color: var(--primary-color);
+        color: #EAE0Df;
+        border: none;
+    }
+
+    .btnclear 
+    {
+        background-color: #c8a19c;
+        color: #333;
+        border: none;
+    }
+    /* end of contact us page */
+
+    /* this is the start of the health benefit page */
+
+        /* this is for the page of health beniefit */
+        .healthHeader 
+        {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            color: var(--text-color-dark); 
+            position: relative;
+            transition: color 0.5s ease-in;
+        }
+        
+        .healthHeader::before 
+        {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, var(--hover-color-start), var(--hover-color-end));
+            transition: width 0.4s ease-out; 
+        }
+        .healthHeader:hover::before 
+        {
+            width: 100%;
+            transition: width 0.3s ease-out; 
+        }
+        
+        .headHealthBenefit 
+        {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .headHealthBenefit img 
+        {
+            max-width: 100%;
+            display: block;
+            border-radius: 8px;
+            filter: blur(2px);
+            z-index: 1;
+        }
+    
+        .headHealthBenefit::before 
+        {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            z-index: 1; 
+        }
+        
+        .headHealthBenefit p
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-color-dark);
+            text-align: center;
+            font-size: 2rem; 
+            font-weight: bold; 
+            z-index: 2; 
+            width: 100%;
+            box-sizing: border-box; 
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 10px; 
+        }
+        
+        /* This is for the conten 1 */
+    
+        .content1 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .content1 p 
+        {
+            max-width: 700px; 
+            margin: 10px; 
+            font-size: 18px;
+            line-height: 2;
+        }
+        
+        .content1 img 
+        {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        /* this is the animated effect for the each part of health benefit */
+    
+        .cardDiv1 .box1 
+        .cardDiv2 .box1
+        {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cardDiv1 .box1::before,
+        .cardDiv2 .box1::before
+        {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, var(--hover-color-start), var(--hover-color-end));
+            transition: width 0.5s ease-out;
+        }
+        
+        .cardDiv1 .box1:hover::before,
+        .cardDiv2 .box1:hover::before
+        {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        
+        .cardDiv1 .box1 h3,
+        .cardDiv2 .box1 h3
+        {
+            color: black;
+            text-decoration: none;
+            padding: 0.9rem;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1; 
+        }   
+
+    /* this is the end of the health benefit page */
+
+    /* Styling for the footer */
+    footer 
+    {
+        color: var(--primary-color);
+        padding: 20px;
+    }
+    .foot
+    {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    /* Styling for footer paragraphs */
+    footer .foot .fLeft,
+    footer .foot .fCenter,
+    footer .foot .fRight 
+    {
+        width: 100%;
+        text-align: center;
+        
+    }
+    /* Additional styling for each column */
+    footer .foot .fCenter 
+    {
+        text-align: center;
+        width: 100%;
+        display: block;
+        align-items: center;
+
+    }
+    /* Add styles for icons in the right column */
+    footer .foot .fRight i 
+    {
+        margin-left: 10px; 
+    }
+
+
+}
+/* This will be small size screen of responsive */
+@media screen and (max-width: 799px)
+{
+    *
+    {   
+        margin: 5px;
+       
+    }
+
+        /* header */
+    .header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--base-color);
+        color: var(--primary-color);
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+    /* ##header */
+
+    /* logo */
+    .logo 
+    {
+        width: 200px;
+        height: 100px;
+    }
+    /* ##logo */
+
+    /* Navbar */
+    .navbar 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    /*  nav-list */
+    .nav-list 
+    {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* nav-item */
+    .nav-item 
+    {
+        margin: 10px;
+    }
+
+    nav ul
+    {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Navigation links styling */
+    .nav-item a
+    {
+        color: var(--text-color-dark);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.9rem;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+        position: relative;
+        letter-spacing: 2px;
+    }
+
+    /* Navigation link hover effect */
+    .nav-item a::before
+    {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-image: linear-gradient(to right, var(--hover-color-start), var(--hover-color-end));
+        transition: width 0.25s ease-out;
+    }
+
+    .nav-item a:hover::before
+    {
+        width: 100%;
+        left: 0;
+        right: auto;
+        transition: 0.5s;
+        text-decoration: 1px underline var(--primary-color);
+    }
+
+    /* nav-link */
+    .nav-link 
+    {
+        display: block;
+        color: var(--base-color);
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    /* ##Navbar */
+
+    /* Search-bar */
+    .search-bar 
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .bi 
+    {
+        height: 300px;
+        width: 300px;
+    }
+
+    .search
+    {
+        display: inline-block;
+        position: relative;
+    }
+
+    .search input
+    {
+        height: 40px;
+        padding: 0 40px 0 0px;
+        border-radius: 20px;
+        border: 0;
+        width: 0;
+        transition: 500ms;
+    }
+    .search button
+    {
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .search:hover>input, input:focus
+    {
+        width: 150px;
+        padding-left: 20px;
+        outline: burlywood;
+    }
+    /* ##Searchbar */
+    /* Sidebar */
+    .sidebar
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.659);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .sidebar li
+    {
+        width: 100%;
+    }
+
+    .sidebar a
+    {
+        width: 100%;
+    }
+
+    .menu-button
+    {
+        display: none;
+    }
+    /* ##Sidebar */
+
+    .hideOnMobile 
+    {
+        display: none;
+    }
+    .menu-button
+    {
+        display: block;
+    }
+    /* this is the pop up ads */
+    #popup  
+    {
+    display: flex;
+    position: absolute;
+    display: block;
+    padding: 1.5rem;
+    background-color: var(--base-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-align: center;
+    }
+
+    /* end of the pop up ads */
+
+    /* this is for the slideshow of the index page */
+    #wp
+    {
+        width: 100%;
+    }
+    .slide_container
+    {
+        max-width: 800px;
+        position: relative;
+        margin: auto;
+    }
+
+  /* This will be the start of ads styling */
+
+    .forAds,
+    .forAdsNo2 
+    {
+        align-items: center;
+        margin: 30px;
+    }
+
+    /* Styling for the ads container */
+    .ads 
+    {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    /* Styling for the ads image */
+    #imgForAds1,#imgForAds2 
+    {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Styling for the ads text container */
+    .textAds 
+    {
+        flex: 2;
+    }
+
+    /* Styling for the ads text paragraphs */
+    .textAds p 
+    {
+        line-height: 1.5;
+        color: var(--text-color-light);
+    }
+     /* Styling for ads images inside cards */
+    .ads img 
+    {
+        width: 50%;
+    }
+
+    /* Styling for the second set of ads */
+    .forAdsNo2 .ads 
+    {
+        flex: 1;
+        margin-left: 20px;
+    }
+    /* this is the  end of the ads styling */
+
+    /* this is for video */
+    video#advertisement 
+    {
+        margin: 0;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+    }
+
+     /* This will be the start for card styling */
+     .cardDiv1
+     {
+          display: flex;
+          flex-wrap: wrap;
+     }
+  
+     /* Styling for individual cards */
+     .card1, .card2, .card3 
+     {
+         width: 500px;
+         margin: 30px;
+         box-shadow: 0 2px 8px 0 rebeccapurple ;
+         transition: 0.3s;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         
+     }
+      .cardDiv1 .box1:hover , .cardDiv2 .box1:hover
+     {
+          box-shadow: 0 3px 8px 0 rgb(0, 38, 87);
+          transform: scale(1.05);
+     }
+     /* Hover effect for cards */
+      .cardDiv1 .card1:hover,
+      .cardDiv1 .card2:hover,
+      .cardDiv1 .card3:hover 
+     {
+         box-shadow: 0 3px 8px 0 rgb(209, 229, 255);
+         transform: scale(1.05);
+     }
+  
+     /* Hover effect for card images */
+     .cardDiv1 .card1:hover .image img,
+     .cardDiv1 .card2:hover .image img,
+     .cardDiv1 .card3:hover .image img 
+     {
+         transform: scale(1.05);
+     }
+     /* Styling for card text container */
+     .text1 
+     {
+         width: 100%;
+     }
+  
+     /* Styling for card content */
+     .content 
+     {
+         padding: 20px;
+     }
+  
+     /* Styling for the code paragraph */
+    .code 
+    {
+        width: 100%;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  
+      /* Styling for card images */
+     .image img 
+     {
+         width: 100%;
+         height: 100%;
+         transition: transform 0.3s;
+     }
+  
+      /* Styling for buttons */
+    .btn 
+    {
+        background-color: rgb(209, 229, 255);
+        border-radius: 10px;
+        color: rgb(0, 38, 87);
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+  
+      /* Styling for button container */
+    .buttonCotainer 
+    {
+         flex-grow: 1;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+    }
+  
+    /* this is the end of the card styling */
+
+    /* this is start of the styling for the index box in the home page */
+    .indexBox
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        border: 2px solid var(--primary-color);
+    }
+    .indexInner1 , .indexInner2 , .indexInner3 , .indexInner4 , .indexInner5
+    {
+        flex: 1;
+        max-width: 250px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .indexInner1 i, .indexInner2 i, .indexInner3 i, .indexInner4 i, .indexInner5 i
+    {
+        text-align: center;
+        justify-content: center;
+        font-size: 34px;
+    }
+
+    
+    .indexInner1 h5,.indexInner2 h5,.indexInner3 h5,.indexInner4 h5,.indexInner5 h5,.indexInner1 p
+    {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .indexInner1 p, .indexInner2 p, .indexInner3 p, .indexInner4 p, .indexInner5 p 
+    {
+        width: 100%;
+    }
+    /* this is end of the styling for the index box in the home page */
+
+    /* this is the start of the Rising desk page */
+    /* this is the start of the deck of the rising hover boxes */
+
+    .deck-container 
+    {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+  .deck 
+  {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+  .deck img 
+  {
+    width: 100%;
+    height: auto; 
+  }
+
+  .deck:hover 
+  {
+    opacity: 0.7;
+  }
+
+  .deck:hover .text-overlay 
+  {
+    opacity: 1;
+  }
+
+  .text-overlay 
+  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+  }
+
+  /* Additional styling for the text overlay */
+  .text-overlay h2 
+  {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--base-color);
+  }
+
+/* this is the end of the deck of the rising hover boxes */
+
+    .deskDiv1,
+    .deskDiv2,
+    .deskDiv3 
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .desk1,
+    .desk2,
+    .desk3 
+    {
+        width: 100%;
+        margin: 15px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .deskDiv1 .desk1:hover,
+    .deskDiv1 .desk2:hover,
+    .deskDiv1 .desk3:hover 
+    {
+        box-shadow: 0 4px 8px 0 var(--primary-color);
+        transform: scale(1.05);
+        border-radius: 30px;
+    }
+    .deskImage
+    {
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+    .deskImage img 
+    {
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+        border-radius: 10px;
+    }
+    
+    .deskDiv1 .desk1:hover .deskImage img,
+    .deskDiv1 .desk2:hover .deskImage img,
+    .deskDiv1 .desk3:hover .deskImage img 
+    {
+        transform: scale(1.02);
+    }
+    .buttonCotainerRising
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .btnRising
+    {
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        color: var(--text-color-light);
+        padding: 10px 13px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* this is the start for the faq part */
+    .faqDiv 
+    {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    }
+    .faqbutton 
+    {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--animation-duration);
+    }
+    .faqbutton:hover 
+    {
+    background-color: var(--hover-color-end);
+    color: var(--text-color-dark);
+    transition: 0.5s var(--animation-easing);
+    }
+    /* this is the end  of the Rising desk page */
+    
+
+    /* this is the start of the health benefit page */
+
+    /* this is for the page of health beniefit */
+    .healthHeader 
+    {
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        color: var(--text-color-dark); 
+        position: relative;
+        transition: color 0.5s ease-in;
+    }
+        
+    .healthHeader::before 
+    {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, var(--hover-color-start), var(--hover-color-end));
+        transition: width 0.4s ease-out; 
+    }
+        .healthHeader:hover::before 
+        {
+            width: 100%;
+            transition: width 0.3s ease-out; 
+        }
+        
+        .headHealthBenefit 
+        {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .headHealthBenefit img 
+        {
+            max-width: 100%;
+            display: block;
+            border-radius: 8px;
+            filter: blur(2px);
+            z-index: 1;
+        }
+    
+        .headHealthBenefit::before 
+        {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            z-index: 1; 
+        }
+        
+        .headHealthBenefit p
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text-color-dark);
+            text-align: center;
+            font-size: 2rem; 
+            font-weight: bold; 
+            z-index: 2; 
+            width: 100%;
+            box-sizing: border-box; 
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 10px; 
+        }
+        
+        /* This is for the conten 1 */
+    
+        .content1 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .content1 p 
+        {
+            max-width: 700px; 
+            margin: 10px; 
+            font-size: 18px;
+            line-height: 2;
+        }
+        
+        .content1 img 
+        {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        /* this is the animated effect for the each part of health benefit */
+    
+        .cardDiv1 .box1 
+        .cardDiv2 .box1
+        {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cardDiv1 .box1::before,
+        .cardDiv2 .box1::before
+        {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, var(--hover-color-start), var(--hover-color-end));
+            transition: width 0.5s ease-out;
+        }
+        
+        .cardDiv1 .box1:hover::before,
+        .cardDiv2 .box1:hover::before
+        {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        
+        .cardDiv1 .box1 h3,
+        .cardDiv2 .box1 h3
+        {
+            color: black;
+            text-decoration: none;
+            padding: 0.9rem;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1; 
+        }   
+
+    /* this is the end of the health benefit page */
+ 
+
+        /* this is the start of the contact us page */
+    
+    /* this will be for form styling */
+    .input-text
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .input-email
+    {
+        border: 2px solid rgb(0, 38, 87);
+        padding: 10px;  
+        width: 100%;        
+        border-radius: 5px;
+    }
+
+    .head
+    {
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    /* Form Styles */
+    form 
+    {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact 
+    {
+        margin-bottom: 15px;
+    }
+
+    label 
+    {
+        margin-bottom: 5px;
+    }
+
+    input 
+    {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    .contact input:focus 
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .btnline 
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btnCU
+    {
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .btnsubmit 
+    {
+        background-color: var(--primary-color);
+        color: #EAE0Df;
+        border: none;
+    }
+
+    .btnclear 
+    {
+        background-color: #c8a19c;
+        color: #333;
+        border: none;
+    }
+    /* end of contact us page */
+
+
+    /* this is the start of the health benefit page */
+    .healthHeader 
+    {
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        color: var(--text-color-dark);
+        position: relative;
+        transition: color 0.5s ease-in;
+    }
+        
+    .healthHeader::before 
+    {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, #e3bda0 , #885E43);
+        transition: width 0.4s ease-out;
+    }
+        
+    .healthHeader:hover::before 
+    {
+        width: 100%;
+        transition: width 0.3s ease-out; 
+    }
+        
+    .headHealthBenefit 
+    {
+        position: relative;
+        overflow: hidden;
+    }
+        
+    .headHealthBenefit img 
+    {
+        max-width: 100%;
+        display: block;
+        border-radius: 8px;
+        filter: blur(2px);
+        z-index: 1;
+    }
+    
+    .headHealthBenefit::before 
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9; 
+        z-index: 1; 
+    }
+        
+    .headHealthBenefit p
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color:var(--text-color-dark);
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold; 
+        z-index: 2;
+        width: 100%; 
+        box-sizing: border-box; 
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+    }
+        
+    /* This is for the conten 1 */
+    
+    .content1 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left; /* Align text to the left */
+    }
+        
+    .content1 p 
+    {
+        max-width: 700px; 
+        margin: 10px; 
+        font-size: 18px;
+        line-height: 2;
+    }
+        
+    .content1 img 
+    {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+        /* this is the animated effect for the each part of health benefit */
+    
+    .cardDiv1 .box1 
+    .cardDiv2 .box1
+    {
+        position: relative;
+        overflow: hidden;
+    }
+        
+        .cardDiv1 .box1::before,
+        .cardDiv2 .box1::before
+        {
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, var(--hover-color-start), var(--hover-color-end));
+            transition: width 0.5s ease-out;
+        }
+        
+        .cardDiv1 .box1:hover::before,
+        .cardDiv2 .box1:hover::before
+        {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        
+        .cardDiv1 .box1 h3,
+        .cardDiv2 .box1 h3
+        {
+            color: var(--text-color-dark);
+            text-decoration: none;
+            padding: 0.9rem;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }   
+
+        /* this is the end of the health benefit page*/
+    
+        /* Styling for the footer */
+        footer 
+        {
+            padding: 20px;
+        }
+        .foot
+        {   
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+        }
+        /* Styling for footer paragraphs */
+        footer .foot .fLeft,
+        footer .foot .fCenter,
+        footer .foot .fRight 
+        {
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* Additional styling for each column */
+        footer .foot .fCenter 
+        {
+            text-align: center;
+            width: 100%;
+            display: block;
+            align-items: center;
+        }
+         
+        /* Add styles for icons in the right column */
+        footer .foot .fRight i 
+        {
+            margin-left: 20px;
+        }           
+}
